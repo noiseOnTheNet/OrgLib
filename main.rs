@@ -1,7 +1,7 @@
 
 mod org;
 use org::{Node,Status};
- 
+
 
 fn add_child2(parent: &mut Node, child : Node){
     &parent.children.push(child);
