@@ -22,7 +22,7 @@ where P: AsRef<Path>, {
     let file = File::open(filename)?;
     Ok(io::BufReader::new(file).lines())
 }
-
+ 
 #[test]
 fn prova(){
   let mut lines_count : usize = 0;
@@ -34,18 +34,19 @@ fn prova(){
             }
         }
   }
+  crate::main();
   assert!(lines_count>0);
 }
 }
 
 fn main() {
-  let mut x = Node::new("hi".to_string());
-  let mut y = Node::new("there".to_string());
-  let mut z = Node::new("how".to_string());
-  let mut w = Node::new("are".to_string());
+  let mut x = Node::new(1,"hi".to_string());
+  let mut y = Node::new(2,"there".to_string());
+  let mut z = Node::new(2,"how".to_string());
+  let mut w = Node::new(3,"are".to_string());
   y.add_child(w);
-  add_child2(&mut x,y);
-  add_child2(&mut x,z);
+  x.add_child(y);
+  x.add_child(z);
   x.status = Some(Status::TODO);
   println!("Debug {:?}", x);
   println!("Display {}", x);

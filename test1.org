@@ -1,4 +1,3 @@
-* root node
-** second level
-* second root node
-** third
+* first line
+** secondary level
+* TODO level with status

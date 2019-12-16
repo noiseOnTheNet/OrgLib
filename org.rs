@@ -64,6 +64,7 @@ pub struct Timestamp{
 
 #[derive(Debug)]
 pub struct Node{
+  pub level : usize,
   pub title : String,
   pub scheduled : Option<Timestamp>,
   pub deadline : Option<Timestamp>,
@@ -73,22 +74,29 @@ pub struct Node{
 }
 
 impl Node{
-  pub fn add_child(self: &mut Node, child : Node){
-    &self.children.push(child);
+  pub fn add_child(self: &mut Node, child : Node) -> Result<(),String>{
+    if self.level < child.level{
+      &self.children.push(child);
+      Ok(())
+    }else{
+      Err(format!("level {} of the child node is not higher than level {} of the parent node",child.level,self.level))
+    }
+    
   }
-  pub fn format(self: &Node, level: usize) -> String{
+  pub fn format(self: &Node) -> String{
     let subnodes = &self.children;
     let status = &self.status;
-    let subtext: Vec<String> = subnodes.into_iter().map(|x| x.format(level + 1)).collect();
+    let subtext: Vec<String> = subnodes.into_iter().map(|x| x.format()).collect();
     format!(
       "{} {}{}\n{}",
-      "*".repeat(level),
+      "*".repeat(self.level),
       display_option_status(status),
       self.title,subtext.join("")
       )
   }
-  pub fn new(title : String) -> Node{
+  pub fn new(level : usize, title : String) -> Node{
     Node{
+      level: level,
       title: title,
       scheduled : None,
       deadline : None,
@@ -106,6 +114,6 @@ impl fmt::Display for Node {
         // stream: `f`. Returns `fmt::Result` which indicates whether the
         // operation succeeded or failed. Note that `write!` uses syntax which
         // is very similar to `println!`.
-        write!(f, "{}", self.format(1))
+        write!(f, "{}", self.format())
     }
 }
