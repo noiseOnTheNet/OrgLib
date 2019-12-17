@@ -1,15 +1,17 @@
 
 # Table of Contents
 
-1.  [Org Lib](#org39cceda)
-    1.  [Disclaimer](#org4e55a63)
+1.  [Intro](#org58f58b2)
+    1.  [Disclaimer](#org28c4b8f)
 
 
-<a id="org39cceda"></a>
 
-# Org Lib
+<a id="org58f58b2"></a>
 
-<https://travis-ci.com/noiseOnTheNet/OrgLib.svg?branch=master>
+# Intro
+
+![status](https://travis-ci.com/noiseOnTheNet/OrgLib.svg?branch=master)
+
 This is going to be a library for reading / writing emacs [Org](https://orgmode.org/) files
 
 The reason is to provide a fast multi OS way to access and modify
@@ -21,7 +23,7 @@ not competing with the elisp implementation, but is meant to extend
 the already great environment
 
 
-<a id="org4e55a63"></a>
+<a id="org28c4b8f"></a>
 
 ## Disclaimer
 

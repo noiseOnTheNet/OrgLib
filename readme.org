@@ -1,5 +1,21 @@
-* Org Lib
-[[https://travis-ci.com/noiseOnTheNet/OrgLib.svg?branch=master]]
+#+OPTIONS: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
+#+OPTIONS: author:t broken-links:nil c:nil creator:nil
+#+OPTIONS: d:(not "LOGBOOK") date:t e:t email:nil f:t inline:t num:t
+#+OPTIONS: p:nil pri:nil prop:nil stat:t tags:t tasks:t tex:t
+#+OPTIONS: timestamp:t title:t toc:t todo:t |:t
+#+TITLE: Org Lib
+#+DATE: <2019-12-17 Tue>
+#+AUTHOR:
+#+EMAIL: mvezzoli@micron.com
+#+LANGUAGE: en
+#+SELECT_TAGS: export
+#+EXCLUDE_TAGS: noexport
+#+CREATOR: Emacs 27.0.50 (Org mode 9.1.9)
+
+* Intro
+#+CAPTION: travis-ci status
+![[https://travis-ci.com/noiseOnTheNet/OrgLib.svg?branch=master][status]]
+
 This is going to be a library for reading / writing emacs [[https://orgmode.org/][Org]] files
 
 The reason is to provide a fast multi OS way to access and modify
